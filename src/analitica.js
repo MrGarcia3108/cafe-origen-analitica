@@ -40,5 +40,71 @@ function ventasPorCiudad(ventas, ciudad) {
   return total;
 }
 
+
+function totalVendidoM(ventas) {
+  return ventas
+    .map((v) => valorVenta(v))
+    .reduce((acumulado, valor) => acumulado + valor, 0);
+}
+
+function unidadesVendidasM(ventas) {
+  return ventas
+    .map((v) => v.cantidad)
+    .reduce((acumulado, cantidad) => acumulado + cantidad, 0);
+}
+
+function ventasPorCiudadM(ventas, ciudad) {
+  const buscada = ciudad.trim().toLowerCase();
+  return ventas
+    .filter((v) => v.ciudad.trim().toLowerCase() === buscada)
+    .map((v) => valorVenta(v))
+    .reduce((acumulado, valor) => acumulado + valor, 0);
+}
+
+function totalPorCiudad(ventas) {
+  const totales = {};
+  for (const v of ventas) {
+    const ciudad = v.ciudad.trim().toLowerCase();
+    if (totales[ciudad] === undefined) totales[ciudad] = 0;
+    totales[ciudad] += valorVenta(v);
+  }
+  return totales;
+}
+
+function unidadesPorProducto(ventas) {
+  const unidades = {};
+  for (const v of ventas) {
+    if (unidades[v.producto] === undefined) unidades[v.producto] = 0;
+    unidades[v.producto] += v.cantidad;
+  }
+  return unidades;
+}
+
+function topProductosPorValor(ventas, k) {
+  const valores = {};
+  for (const v of ventas) {
+    if (valores[v.producto] === undefined) valores[v.producto] = 0;
+    valores[v.producto] += valorVenta(v);
+  }
+  const lista = [...Object.entries(valores)];
+  lista.sort((a, b) => b[1] - a[1]);
+  return lista.slice(0, k);
+}
+
 console.log(totalVendido(ventas), unidadesVendidas(ventas), ventaMayor(ventas).id);
 console.log(Math.round(ticketPromedio(ventas)), ventasPorCiudad(ventas, "medellín"));
+
+module.exports = {
+  valorVenta,
+  totalVendido,
+  unidadesVendidas,
+  ventaMayor,
+  ticketPromedio,
+  ventasPorCiudad,
+  totalVendidoM,
+  unidadesVendidasM,
+  ventasPorCiudadM,
+  totalPorCiudad,
+  unidadesPorProducto,
+  topProductosPorValor,
+};
