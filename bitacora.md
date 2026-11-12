@@ -79,3 +79,17 @@
 - Transformo: nada.
 - Acumulo: el valor de cada venta.
 - Agrupo: con un objeto por producto.
+
+## Reto 4: depuracion de errores reportados
+
+### Error 1: Bogota aparece dos veces
+
+- **Error:** Bogota salia como dos grupos distintos.
+- **Entrada:** ventas con ciudad "Bogota" y "Bogota ".
+- **Correccion:** en totalPorCiudad uso trim() y toLowerCase() antes de usar la ciudad como clave.
+
+### Error 2: NaN en un dia sin ventas
+
+- **Error:** al filtrar un dia sin ventas daba NaN.
+- **Entrada:** un arreglo vacio, por ejemplo las ventas del 2026-09-10.
+- **Correccion:** en ticketPromedio, si validas es 0 devuelvo 0.

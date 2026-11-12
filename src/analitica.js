@@ -91,6 +91,17 @@ function topProductosPorValor(ventas, k) {
   return lista.slice(0, k);
 }
 
+function ventasDelDia(ventas, fecha) {
+  const delDia = [];
+  for (const v of ventas) if (v.fecha === fecha) delDia.push(v);
+  return {
+    fecha: fecha,
+    registros: delDia.length,
+    total: totalVendido(delDia),
+    ticket: ticketPromedio(delDia),
+  };
+}
+
 console.log(totalVendido(ventas), unidadesVendidas(ventas), ventaMayor(ventas).id);
 console.log(Math.round(ticketPromedio(ventas)), ventasPorCiudad(ventas, "medellín"));
 
@@ -107,4 +118,5 @@ module.exports = {
   totalPorCiudad,
   unidadesPorProducto,
   topProductosPorValor,
+  ventasDelDia,
 };
