@@ -1,4 +1,6 @@
 const { generarVentas } = require("./generador");
+const datos = require("./datos");
+const { clientesRecurrentes } = require("./analitica");
 
 function totalVendidoC(ventas, contador) {
   let total = 0;
@@ -58,3 +60,14 @@ for (const n of tamanos) {
 }
 
 console.table(tabla);
+
+console.log(clientesRecurrentes(datos));
+
+const tamanosTiempo = [1000, 2000, 4000, 8000, 16000];
+
+for (const n of tamanosTiempo) {
+  const ventas = generarVentas(n);
+  console.time("n = " + n);
+  clientesRecurrentes(ventas);
+  console.timeEnd("n = " + n);
+}

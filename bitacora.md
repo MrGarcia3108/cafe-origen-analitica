@@ -104,10 +104,6 @@ Si n se multiplica por 10:
 - totalPorCiudad: se multiplican por 10.
 - primeraVenta: no cambia.
 
-### Contador
-
-Sumo 1 cada vez que visito un elemento.
-
 ### Resultados
 
 | n | totalVendido | ventaMayor | totalPorCiudad | primeraVenta |
@@ -117,7 +113,7 @@ Sumo 1 cada vez que visito un elemento.
 | 10000 | 10000 | 20000 | 20000 | 1 |
 | 100000 | 100000 | 200000 | 200000 | 1 |
 
-### Comparacion de la prediccion con los resultados
+### Comparacion
 
 Mi prediccion se cumplio. Cuando n crece 10 veces, las tres funciones lineales hacen 10 veces mas operaciones. primeraVenta siempre hace 1.
 
