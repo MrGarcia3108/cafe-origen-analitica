@@ -93,3 +93,37 @@
 - **Error:** al filtrar un dia sin ventas daba NaN.
 - **Entrada:** un arreglo vacio, por ejemplo las ventas del 2026-09-10.
 - **Correccion:** en ticketPromedio, si validas es 0 devuelvo 0.
+
+## Reto 5: generador de datos
+
+### Prediccion
+
+Si n se multiplica por 10:
+- totalVendido: las operaciones se multiplican por 10.
+- ventaMayor: se multiplican por 10.
+- totalPorCiudad: se multiplican por 10.
+- primeraVenta: no cambia.
+
+### Contador
+
+Sumo 1 cada vez que visito un elemento.
+
+### Resultados
+
+| n | totalVendido | ventaMayor | totalPorCiudad | primeraVenta |
+|---|---|---|---|---|
+| 100 | 100 | 200 | 200 | 1 |
+| 1000 | 1000 | 2000 | 2000 | 1 |
+| 10000 | 10000 | 20000 | 20000 | 1 |
+| 100000 | 100000 | 200000 | 200000 | 1 |
+
+### Comparacion de la prediccion con los resultados
+
+Mi prediccion se cumplio. Cuando n crece 10 veces, las tres funciones lineales hacen 10 veces mas operaciones. primeraVenta siempre hace 1.
+
+### Clasificacion Big O
+
+- **totalVendido: O(n).** Tiene un solo ciclo que recorre todas las ventas.
+- **ventaMayor: O(n).** Tiene un solo ciclo.
+- **totalPorCiudad: O(n).** Tiene un solo ciclo y en cada vuelta hace siempre lo mismo.
+- **primeraVenta: O(1).** Solo mira la posicion 0.
