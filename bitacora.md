@@ -123,3 +123,37 @@ Mi prediccion se cumplio. Cuando n crece 10 veces, las tres funciones lineales h
 - **ventaMayor: O(n).** Tiene un solo ciclo.
 - **totalPorCiudad: O(n).** Tiene un solo ciclo y en cada vuelta hace siempre lo mismo.
 - **primeraVenta: O(1).** Solo mira la posicion 0.
+
+## Reto 6: ciclos anidados
+
+### Tiempos medidos
+
+| n | Tiempo (ms) |
+|---|---|
+| 1000 | 5.435 ms |
+| 2000 | 14.056 ms |
+| 4000 | 49.17 ms |
+| 8000 | 253.287 ms |
+| 16000 | 924.78 ms |
+
+### Estimacion
+
+Cuando n se duplica, el tiempo se multiplica.
+
+Con el tiempo de n = 16000 (924.78 ms):
+
+Utilizamos los ms de 16000 y dividimos 100000/16000 y el resultado los elevamos a la dos: 39.06
+
+100000 = 924.78 ms x 39.06 = 36.121 ms = 36.1 seg
+
+Medicion real con 100.000: 48.968s ms.
+
+### Costo oculto
+
+Revisa los elementos de recurrentes uno por uno hasta encontrar el cliente.
+
+En el peor caso, recurrentes crece mucho y cada includes tiene que recorrer una lista larga.
+
+### Conclusion
+
+El reporte se vuelve lento porque, para saber que clientes repiten compra, el programa compara cada venta con todas las demas.
