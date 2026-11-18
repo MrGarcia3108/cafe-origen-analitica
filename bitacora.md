@@ -130,21 +130,22 @@ Mi prediccion se cumplio. Cuando n crece 10 veces, las tres funciones lineales h
 
 | n | Tiempo (ms) |
 |---|---|
-| 1000 | 5.435 ms |
-| 2000 | 14.056 ms |
-| 4000 | 49.17 ms |
-| 8000 | 253.287 ms |
-| 16000 | 924.78 ms |
+| 1.000 | 5.435 ms |
+| 2.000 | 14.056 ms |
+| 4.000 | 49.17 ms |
+| 8.000 | 253.287 ms |
+| 16.000 | 924.78 ms |
 
 ### Estimacion
 
 Cuando n se duplica, el tiempo se multiplica.
 
-Con el tiempo de n = 16000 (924.78 ms):
+Con el tiempo de n = 16.000 (924.78 ms):
 
 Utilizamos los ms de 16000 y dividimos 100000/16000 y el resultado los elevamos a la dos: 39.06
 
-100000 = 924.78 ms x 39.06 = 36.121 ms = 36.1 seg
+100.000 = 924.78 ms x 39.06 = 36.121 ms = 36.1 seg
+1.000.000 = 924.78 ms x 3906.25 = 3.612.421,87 = 3.2 min 
 
 Medicion real con 100.000: 48.968s ms.
 
