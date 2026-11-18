@@ -40,7 +40,6 @@ function ventasPorCiudad(ventas, ciudad) {
   return total;
 }
 
-
 function totalVendidoM(ventas) {
   return ventas
     .map((v) => valorVenta(v))
