@@ -158,3 +158,29 @@ En el peor caso, recurrentes crece mucho y cada includes tiene que recorrer una 
 ### Conclusion
 
 El reporte se vuelve lento porque, para saber que clientes repiten compra, el programa compara cada venta con todas las demas.
+
+## Reto 7: Espacial
+
+### Recorridos
+
+| Version | Recorridos completos | Arreglos nuevos |
+|---|---|---|---|---|
+| totalCiudadCadena | 4 (map, filter, map, reduce) | 3 (los de map, filter y map) |
+| totalCiudadUnaPasada | 1 (un for...of) | 0 |
+
+### Por que ambas son O(n) en tiempo
+
+La cadena recorre el arreglo cuatro veces. Una pasada hace unas n operaciones. En las reglas de simplificacion se eliminan las constantes. En las dos versiones, si n se duplica, el tiempo se duplica.
+
+### Complejidad espacial de las funciones del motor
+
+**O(1): memoria adicional constante**
+- valorVenta, totalVendido, unidadesVendidas, ventaMayor, ticketPromedio, ventasPorCiudad, totalCiudadUnaPasada. Solo usan variables sueltas, sin crear arreglos ni objetos.
+
+**O(n): memoria proporcional a los datos**
+- totalVendidoM, unidadesVendidasM, ventasPorCiudadM, totalCiudadCadena: map y filter crean arreglos nuevos del tamano de los datos.
+- ventasDelDia, clientesRecurrentes: el arreglo donde guardan resultados puede llegar a tener n elementos.
+
+### Decision: que version dejo en el motor
+
+Dejo totalCiudadUnaPasada: Recorre las ventas una sola vez y no crea arreglos nuevos. La version de una pasada tiene solo un ciclo y un if, asi que tambien se entiende facil.
