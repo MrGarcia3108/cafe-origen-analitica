@@ -145,7 +145,7 @@ Con el tiempo de n = 16.000 (924.78 ms):
 Utilizamos los ms de 16000 y dividimos 100000/16000 y el resultado los elevamos a la dos: 39.06
 
 100.000 = 924.78 ms x 39.06 = 36.121 ms = 36.1 seg
-1.000.000 = 924.78 ms x 3906.25 = 3.612.421,87 = 3.2 min 
+1.000.000 = 924.78 ms x 3906.25 = 3.612.421,87 = 60,2 min 
 
 Medicion real con 100.000: 48.968s ms.
 
@@ -183,4 +183,4 @@ La cadena recorre el arreglo cuatro veces. Una pasada hace unas n operaciones. E
 
 ### Decision: que version dejo en el motor
 
-Dejo totalCiudadUnaPasada: Recorre las ventas una sola vez y no crea arreglos nuevos. La version de una pasada tiene solo un ciclo y un if, asi que tambien se entiende facil.
+Dejo totalCiudadUnaPasada: Recorre las ventas una sola vez y no crea arreglos nuevos. La version de una pasada tiene solo un ciclo y un if.
